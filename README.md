@@ -85,4 +85,13 @@ Esse projeto foi desenvolvido com foco em melhorar a organização do código no
 A interface é simples e os dados são mockados, pois o objetivo principal aqui não é backend, mas sim estrutura, lógica e organização.
 
 
+## Tecnologias 
 
+- TypeScript
+- Vite
+- CSS Modules
+- Vercel (deploy)
+
+## Deploy:  
+
+[Acessar aplicação](https://banco-mvc-ts.vercel.app/)
