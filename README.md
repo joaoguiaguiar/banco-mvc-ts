@@ -49,6 +49,18 @@ interface Transacao {
 
 ---
 
+## Organização e utilitários
+
+Além da estrutura principal em MVC, o projeto também conta com separação de responsabilidades em camadas auxiliares:
+
+- **Utils** → funções reutilizáveis (formatação de valores, datas e cartão)
+- **Validators** → regras de validação (valor, saldo, campos obrigatórios)
+- **Constants** → centralização de mensagens de erro e sucesso
+
+Essa abordagem ajuda a evitar código duplicado e facilita a manutenção da aplicação.
+
+---
+
 ## 📁 Estrutura
 
 ```text
@@ -57,6 +69,8 @@ src/
 ├── controllers/
 ├── views/
 ├── types/
+├── utils/
+├── constants/
 └── main.ts
 ```
 
