@@ -51,7 +51,6 @@ interface Transacao {
 
 ## 📁 Estrutura
 
-
 ```text
 src/
 ├── model/
@@ -60,6 +59,7 @@ src/
 ├── types/
 └── main.ts
 ```
+
 
 
 ---
