@@ -2,6 +2,8 @@ import ContaBancaria from "./model/ContaBancaria";
 import { ContaController } from "./controllers/ContaController";
 import { DashboardView } from "./views/DashboardView";
 import type { Transacao } from "./types/Transacao";
+import { Validators } from "./utils/validators";
+import { MESSAGES } from "./constants/messages";
 
 // Dados iniciais das transações
 const transacoesIniciais: Transacao[] = [
@@ -122,8 +124,7 @@ window.addEventListener('contaAtualizada', (event: any) => {
 // Inicializa a interface
 atualizarInterface();
 
-// SÓ COPIA ISSO NO FINAL DO SEU main.ts (substitui tudo do modal)
-
+// MODAL
 const modal = document.getElementById('modal') as HTMLElement;
 const modalTitulo = document.getElementById('modalTitulo') as HTMLElement;
 const modalValor = document.getElementById('modalValor') as HTMLInputElement;
@@ -156,6 +157,7 @@ function abrirModal(tipo: string) {
     modalValor.value = '';
     modalExtra.value = '';
     modal.classList.add('active');
+    modalValor.focus();
 }
 
 function fecharModal() {
@@ -165,8 +167,8 @@ function fecharModal() {
 function confirmarModal() {
     const valor = parseFloat(modalValor.value);
     
-    if (isNaN(valor) || valor <= 0) {
-        alert('Digite um valor válido!');
+    if (!Validators.valor(valor)) {
+        alert(MESSAGES.ALERT.VALOR_INVALIDO);
         return;
     }
     
@@ -178,8 +180,8 @@ function confirmarModal() {
         controller.realizarSaque(valor, descricao);
     } else {
         const destinatario = modalExtra.value.trim();
-        if (!destinatario) {
-            alert('Digite o destinatário!');
+        if (!Validators.destinatario(destinatario)) {
+            alert(MESSAGES.ALERT.DESTINATARIO);
             return;
         }
         controller.realizarTransferencia(valor, destinatario);
@@ -200,4 +202,3 @@ modal?.addEventListener('click', (e) => {
     if (e.target === modal) fecharModal();
 });
 
-console.log('✅ Modal configurado!');

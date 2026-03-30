@@ -1,4 +1,7 @@
 import type { Transacao } from "../types/Transacao";
+import { Formatters } from "../utils/formatters";
+import { Validators } from "../utils/validators";
+import { MESSAGES } from "../constants/messages";
 
 export default class ContaBancaria {
     id: number;
@@ -45,7 +48,7 @@ export default class ContaBancaria {
         descricao: string
     ): void {
         const dataAtual = new Date();
-        const dataFormatada = this.formatarData(dataAtual);
+        const dataFormatada = Formatters.data(dataAtual);
         
         let icone: "↑" | "↓" | "⇄";
         let sinal: "positive" | "negative";
@@ -80,18 +83,11 @@ export default class ContaBancaria {
     }
     
     private formatarData(data: Date): string {
-        const meses = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
-        const dia = data.getDate();
-        const mes = meses[data.getMonth()];
-        const ano = data.getFullYear();
-        const horas = data.getHours().toString().padStart(2, "0");
-        const minutos = data.getMinutes().toString().padStart(2, "0");
-        
-        return `${dia} ${mes} ${ano} • ${horas}:${minutos}`;
+        return Formatters.data(data);
     }
     
     depositar(valor: number, descricao: string): void {
-        if (valor <= 0) throw new Error("Valor deve ser maior que zero");
+        if (!Validators.valor(valor)) throw new Error(MESSAGES.ERROR.VALOR_INVALIDO);
         
         this.saldoDisponivel += valor;
         this.entradasTotal += valor;
@@ -99,8 +95,8 @@ export default class ContaBancaria {
     }
     
     sacar(valor: number, descricao: string): boolean {
-        if (valor <= 0) throw new Error("Valor deve ser maior que zero");
-        if (valor > this.saldoDisponivel) return false;
+        if (!Validators.valor(valor)) throw new Error(MESSAGES.ERROR.VALOR_INVALIDO);
+        if (!Validators.saldoSuficiente(this.saldoDisponivel, valor)) return false;
         
         this.saldoDisponivel -= valor;
         this.saidasTotal += valor;
@@ -109,8 +105,8 @@ export default class ContaBancaria {
     }
     
     transferir(valor: number, destinatario: string): boolean {
-        if (valor <= 0) throw new Error("Valor deve ser maior que zero");
-        if (valor > this.saldoDisponivel) return false;
+        if (!Validators.valor(valor)) throw new Error(MESSAGES.ERROR.VALOR_INVALIDO);
+        if (!Validators.saldoSuficiente(this.saldoDisponivel, valor)) return false;
         
         const descricao = `Transferência para ${destinatario}`;
         

@@ -1,5 +1,6 @@
 import ContaBancaria from "../model/ContaBancaria";
 import type { Transacao } from "../types/Transacao";
+import { MESSAGES } from "../constants/messages";
 
 export class ContaController {
     private conta: ContaBancaria;
@@ -52,10 +53,11 @@ export class ContaController {
         try {
             this.conta.depositar(valor, descricao);
             this.atualizarView();
+            alert(MESSAGES.SUCCESS.DEPOSITO);
             return true;
         } catch (error) {
             console.error("Erro no depósito:", error);
-            alert("Erro ao realizar depósito: " + (error as Error).message);
+            alert(MESSAGES.ERROR.DEPOSITO_ERRO + ": " + (error as Error).message);
             return false;
         }
     }
@@ -65,14 +67,15 @@ export class ContaController {
             const sucesso = this.conta.sacar(valor, descricao);
             if (sucesso) {
                 this.atualizarView();
+                alert(MESSAGES.SUCCESS.SAQUE);
                 return true;
             } else {
-                alert("Saldo insuficiente!");
+                alert(MESSAGES.ERROR.SALDO_INSUFICIENTE);
                 return false;
             }
         } catch (error) {
             console.error("Erro no saque:", error);
-            alert("Erro ao realizar saque: " + (error as Error).message);
+            alert(MESSAGES.ERROR.SAQUE_ERRO + ": " + (error as Error).message);
             return false;
         }
     }
@@ -82,14 +85,15 @@ export class ContaController {
             const sucesso = this.conta.transferir(valor, destinatario);
             if (sucesso) {
                 this.atualizarView();
+                alert(MESSAGES.SUCCESS.TRANSFERENCIA);
                 return true;
             } else {
-                alert("Saldo insuficiente!");
+                alert(MESSAGES.ERROR.SALDO_INSUFICIENTE);
                 return false;
             }
         } catch (error) {
             console.error("Erro na transferência:", error);
-            alert("Erro ao realizar transferência: " + (error as Error).message);
+            alert(MESSAGES.ERROR.TRANSFERENCIA_ERRO + ": " + (error as Error).message);
             return false;
         }
     }

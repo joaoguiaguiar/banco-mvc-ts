@@ -1,4 +1,5 @@
 import type { Transacao } from "../types/Transacao";
+import { Formatters } from "../utils/formatters";
 
 export class DashboardView {
     private elementos: {
@@ -33,16 +34,16 @@ export class DashboardView {
 
     atualizarSaldo(saldo: number): void {
         if (this.elementos.saldo) {
-            this.elementos.saldo.textContent = this.formatarMoeda(saldo);
+            this.elementos.saldo.textContent = Formatters.moeda(saldo);
         }
     }
 
     atualizarResumo(entradas: number, saidas: number): void {
         if (this.elementos.entradas) {
-            this.elementos.entradas.textContent = this.formatarMoeda(entradas);
+            this.elementos.entradas.textContent = Formatters.moeda(entradas);
         }
         if (this.elementos.saidas) {
-            this.elementos.saidas.textContent = this.formatarMoeda(saidas);
+            this.elementos.saidas.textContent = Formatters.moeda(saidas);
         }
     }
 
@@ -60,7 +61,7 @@ export class DashboardView {
             this.elementos.cartaoTitular.textContent = titular.toUpperCase();
         }
         if (this.elementos.cartaoNumero) {
-            this.elementos.cartaoNumero.textContent = this.formatarNumeroCartao(numero);
+            this.elementos.cartaoNumero.textContent = Formatters.cartao(numero);
         }
         if (this.elementos.cartaoValidade) {
             this.elementos.cartaoValidade.textContent = validade;
@@ -82,7 +83,7 @@ export class DashboardView {
         const li = document.createElement('li');
         li.className = 'transacao';
 
-        const valorFormatado = this.formatarMoeda(transacao.valor);
+        const valorFormatado = Formatters.moeda(transacao.valor);
         const sinal = transacao.sinal === 'positive' ? '+' : '-';
         const classeValor = transacao.sinal === 'positive' ? 'positivo' : 'negativo';
 
@@ -102,22 +103,11 @@ export class DashboardView {
 
     atualizarLimites(limite: number, fatura: number): void {
         if (this.elementos.limiteDisponivel) {
-            this.elementos.limiteDisponivel.textContent = this.formatarMoeda(limite);
+            this.elementos.limiteDisponivel.textContent = Formatters.moeda(limite);
         }
         if (this.elementos.proximaFatura) {
-            this.elementos.proximaFatura.textContent = `15/abr · ${this.formatarMoeda(fatura)}`;
+            this.elementos.proximaFatura.textContent = `15/abr · ${Formatters.moeda(fatura)}`;
         }
-    }
-
-    private formatarMoeda(valor: number): string {
-        return new Intl.NumberFormat('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-        }).format(valor);
-    }
-
-    private formatarNumeroCartao(numero: string): string {
-        return numero.replace(/(\d{4})/g, '$1 ').trim();
     }
 
     private getTipoClasse(tipo: string): string {
