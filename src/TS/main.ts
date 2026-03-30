@@ -84,7 +84,7 @@ const transacoesIniciais: Transacao[] = [
 // Inicializa a conta
 const conta = new ContaBancaria(
     1,
-    "JULIA DIAS",
+    "João Aguiar",
     "5248120987453102",
     "08/28",
     200,

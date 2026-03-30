@@ -82,10 +82,6 @@ export default class ContaBancaria {
         this.proximoIdTransacao++;
     }
     
-    private formatarData(data: Date): string {
-        return Formatters.data(data);
-    }
-    
     depositar(valor: number, descricao: string): void {
         if (!Validators.valor(valor)) throw new Error(MESSAGES.ERROR.VALOR_INVALIDO);
         
