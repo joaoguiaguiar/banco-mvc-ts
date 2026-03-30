@@ -1,6 +1,6 @@
 #  NeoBank Dashboard
 
-Projeto focado em TypeScript, arquitetura de software e design de interfaces.
+Projeto focado em **TypeScript**, arquitetura de software e design de interfaces.
 
 A ideia aqui foi simular um dashboard de banco digital, trabalhando principalmente organização de código no front-end e separação de responsabilidades.
 
@@ -19,6 +19,26 @@ A ideia aqui foi simular um dashboard de banco digital, trabalhando principalmen
 
 ---
 
+## TypeScript no projeto
+
+O TypeScript foi usado para garantir mais segurança e previsibilidade no código:
+
+- **Interfaces** para definir a estrutura dos dados (`Transacao`)
+- **Tipagem forte** nos parâmetros e retornos das funções
+- **Classes** com propriedades públicas e privadas
+- **Prevenção de erros** em tempo de desenvolvimento
+
+```ts
+// Exemplo de tipagem utilizada
+interface Transacao {
+  tipo: "deposit" | "retirar" | "transfer";
+  valor: number;
+  sinal: "positive" | "negative";
+}
+
+```
+
+
 ## Funcionalidades
 
 - Visualização de saldo
@@ -31,13 +51,15 @@ A ideia aqui foi simular um dashboard de banco digital, trabalhando principalmen
 
 ## 📁 Estrutura
 
+
+```text
 src/
 ├── model/
 ├── controllers/
 ├── views/
 ├── types/
 └── main.ts
-
+```
 
 
 ---
