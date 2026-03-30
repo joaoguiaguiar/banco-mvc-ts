@@ -1,0 +1,116 @@
+.painel-historico {
+  background: var(--fundo-superficie);
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--raio-painel);
+}
+
+.cabecalho-historico {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--espaco-5) var(--espaco-6);
+  border-bottom: 1px solid var(--borda-suave);
+}
+
+.historico-titulo {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.historico-badge {
+  font-family: var(--fonte-mono);
+  font-size: 0.7rem;
+  background: var(--destaque-azul-fraco);
+  color: var(--destaque-azul);
+  padding: 0.2rem 0.8rem;
+  border-radius: 100px;
+  border: 1px solid rgba(43, 110, 240, 0.2);
+}
+
+.lista-transacoes {
+  list-style: none;
+  max-height: 495px;
+  overflow-y: auto;
+}
+
+.lista-transacoes::-webkit-scrollbar {
+  width: 4px;
+}
+
+.lista-transacoes::-webkit-scrollbar-thumb {
+  background: var(--destaque-azul);
+  border-radius: 4px;
+}
+
+.transacao {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: var(--espaco-4);
+  padding: var(--espaco-4) var(--espaco-6);
+  border-bottom: 1px solid var(--borda-suave);
+  transition: background 0.15s;
+}
+
+.transacao:hover {
+  background: rgba(43, 110, 240, 0.05);
+}
+
+.transacao-icone {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.transacao-icone.deposito {
+  background: var(--sucesso-fraco);
+  color: var(--sucesso);
+}
+
+.transacao-icone.saque {
+  background: var(--perigo-fraco);
+  color: var(--perigo);
+}
+
+.transacao-icone.transferencia {
+  background: var(--destaque-azul-fraco);
+  color: var(--destaque-azul);
+}
+
+.transacao-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.transacao-desc {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--texto-principal);
+}
+
+.transacao-data {
+  font-size: 0.65rem;
+  font-family: var(--fonte-mono);
+  color: var(--texto-suave);
+}
+
+.transacao-valor {
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+.transacao-valor.positivo {
+  color: var(--sucesso);
+}
+
+.transacao-valor.negativo {
+  color: var(--perigo);
+}

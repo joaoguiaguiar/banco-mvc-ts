@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--fundo-profundo);
+  font-family: var(--fonte-sans);
+  color: var(--texto-principal);
+  line-height: 1.4;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: var(--fonte-sans);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+input,
+textarea {
+  font-family: var(--fonte-sans);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--destaque-azul);
+  color: var(--texto-principal);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--fundo-profundo);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--borda-foco);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--destaque-azul);
+}

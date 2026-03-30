@@ -1,0 +1,91 @@
+.texto-mono {
+  font-family: var(--fonte-mono);
+}
+
+.texto-xs {
+  font-size: 0.7rem;
+}
+
+.texto-sm {
+  font-size: 0.85rem;
+}
+
+.fonte-medium {
+  font-weight: 500;
+}
+
+.fonte-semibold {
+  font-weight: 600;
+}
+
+.fonte-bold {
+  font-weight: 700;
+}
+
+.texto-principal {
+  color: var(--texto-principal);
+}
+
+.texto-secundario {
+  color: var(--texto-secundario);
+}
+
+.texto-suave {
+  color: var(--texto-suave);
+}
+
+.texto-destaque {
+  color: var(--destaque-azul);
+}
+
+.texto-sucesso {
+  color: var(--sucesso);
+}
+
+.texto-perigo {
+  color: var(--perigo);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-coluna {
+  flex-direction: column;
+}
+
+.itens-center {
+  align-items: center;
+}
+
+.espaco-entre {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: var(--espaco-2);
+}
+
+.gap-3 {
+  gap: var(--espaco-3);
+}
+
+.gap-4 {
+  gap: var(--espaco-4);
+}
+
+.raio-sm {
+  border-radius: var(--raio-sm);
+}
+
+.raio-painel {
+  border-radius: var(--raio-painel);
+}
+
+.transicao {
+  transition: var(--transicao);
+}
+
+.escondido {
+  display: none;
+}

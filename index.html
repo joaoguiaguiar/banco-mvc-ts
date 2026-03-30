@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NeoBank | Fintech Profissional</title>
+<link rel="stylesheet" href="./src/css/main.css">
+<link rel="stylesheet" href="./src/css/modal.css">
+</head>
+<body>
+
+<header class="cabecalho">
+  <div class="logo">
+    Neo<em>Bank</em>
+  </div>
+</header>
+
+<main class="container">
+
+  <aside class="barra-lateral">
+    <div class="cartao">
+      <div class="cartao-topo">
+        <div class="cartao-chip"></div>
+        <span class="cartao-bandeira">NEOBANK</span>
+      </div>
+      <div class="cartao-numero"></div>
+      <div class="cartao-rodape">
+        <div>
+          <div class="cartao-campo-rotulo">Titular</div>
+          <div class="cartao-campo-valor"></div>
+        </div>
+        <div style="text-align:right">
+          <div class="cartao-campo-rotulo">Validade</div>
+          <div class="cartao-campo-valor"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="painel">
+      <div class="painel-rotulo">Saldo disponível</div>
+      <div class="saldo-valor"></div>
+      <div class="grafico-mini">
+        <div class="barra-grafico entrada" style="height:65%"></div>
+        <div class="barra-grafico saida" style="height:28%"></div>
+        <div class="barra-grafico entrada" style="height:82%"></div>
+        <div class="barra-grafico saida" style="height:45%"></div>
+        <div class="barra-grafico entrada" style="height:57%"></div>
+        <div class="barra-grafico saida" style="height:32%"></div>
+        <div class="barra-grafico entrada" style="height:71%"></div>
+      </div>
+      <div class="saldo-detalhes">
+        <div class="detalhe-item">
+          <span class="detalhe-rotulo">↑ Entradas</span>
+          <span class="detalhe-valor entrada"></span>
+        </div>
+        <div class="detalhe-item">
+          <span class="detalhe-rotulo">↓ Saídas</span>
+          <span class="detalhe-valor saida"></span>
+        </div>
+        <div class="detalhe-item">
+          <span class="detalhe-rotulo">⟳ Transações</span>
+          <span class="detalhe-valor"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="painel">
+      <div class="painel-rotulo">Operações rápidas</div>
+      <div class="grade-operacoes">
+        <button class="btn-operacao deposito">↑ Depositar</button>
+        <button class="btn-operacao saque">↓ Sacar</button>
+        <button class="btn-operacao transferencia">⇄ Transferir</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="conteudo-principal">
+    <div class="cards-info">
+      <div class="card-info">
+        <div class="card-info-titulo">Limite disponível</div>
+        <div class="card-info-valor"></div>
+      </div>
+      <div class="card-info">
+        <div class="card-info-titulo">Próxima fatura</div>
+        <div class="card-info-valor"></div>
+      </div>
+    </div>
+
+    <div class="painel-historico">
+      <div class="cabecalho-historico">
+        <span class="historico-titulo">Últimas movimentações</span>
+        <span class="historico-badge"></span>
+      </div>
+      <ul class="lista-transacoes"></ul>
+    </div>
+  </div>
+</main>
+
+<footer class="rodape">
+  Projeto focado em typescript, arquitetura de software e design de interfaces.
+</footer>
+
+<div id="modal" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modalTitulo">Operação</h2>
+      <button class="modal-fechar">&times;</button>
+    </div>
+    <div class="modal-corpo">
+      <div class="grupo-form">
+        <label>Valor (R$)</label>
+        <input type="number" id="modalValor" step="0.01" placeholder="0,00">
+      </div>
+      <div id="campoExtra" class="grupo-form" style="display: none;">
+        <label id="labelExtra">Descrição</label>
+        <input type="text" id="modalExtra" placeholder="">
+      </div>
+    </div>
+    <div class="modal-rodape">
+      <button class="btn-modal-cancelar" id="cancelarModal">Cancelar</button>
+      <button class="btn-modal-confirmar" id="confirmarModal">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="./src/TS/main.ts"></script>
+</body>
+</html>

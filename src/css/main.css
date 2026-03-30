@@ -1,0 +1,222 @@
+@import url('./modal.css');
+@import "./var/tema.css";
+@import "./base/reset.css";
+@import "./base/utilidades.css";
+@import "./layout/header.css";
+@import "./layout/footer.css";
+@import "./componentes/cartao.css";
+@import "./componentes/saldo.css";
+@import "./componentes/operacoes.css";
+@import "./componentes/historico.css";
+@import "./componentes/painel.css";
+@import "./componentes/cartao-info.css";
+@import "./responsive/media.css";
+@import "./responsive/media.css";
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--espaco-6) var(--espaco-8) var(--espaco-10);
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: var(--espaco-6);
+  align-items: start;
+}
+
+.barra-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-5);
+}
+
+.conteudo-principal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-5);
+}
+
+/* ===== RESPONSIVIDADE FORÇADA ===== */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr !important;
+    padding: 1rem !important;
+    gap: 1rem !important;
+  }
+  
+  .barra-lateral {
+    order: 1 !important;
+  }
+  
+  .conteudo-principal {
+    order: 2 !important;
+  }
+  
+  /* Botões em coluna */
+  .grade-operacoes {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+  
+  .btn-operacao.transferencia {
+    grid-column: span 1 !important;
+  }
+  
+  .btn-operacao {
+    padding: 0.8rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Cards em coluna */
+  .cards-info {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+  
+  /* Cartão menor */
+  .cartao {
+    padding: 1rem !important;
+  }
+  
+  .cartao-numero {
+    font-size: 0.85rem !important;
+    letter-spacing: 1px !important;
+    margin: 0.75rem 0 !important;
+  }
+  
+  /* Saldo */
+  .saldo-valor {
+    font-size: 1.6rem !important;
+  }
+  
+  .grafico-mini {
+    height: 35px !important;
+  }
+  
+  /* Transações */
+  .transacao {
+    grid-template-columns: 35px 1fr auto !important;
+    gap: 0.5rem !important;
+    padding: 0.75rem !important;
+  }
+  
+  .transacao-icone {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .transacao-desc {
+    font-size: 0.75rem !important;
+  }
+  
+  .transacao-data {
+    font-size: 0.6rem !important;
+  }
+  
+  .transacao-valor {
+    font-size: 0.7rem !important;
+  }
+  
+  /* Detalhes de saldo */
+  .saldo-detalhes {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+  
+  .detalhe-item {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  
+  .detalhe-rotulo {
+    font-size: 0.6rem !important;
+  }
+  
+  .detalhe-valor {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Painel */
+  .painel {
+    padding: 0.75rem 1rem !important;
+  }
+  
+  /* Header */
+  .cabecalho {
+    padding: 0 1rem !important;
+    height: 56px !important;
+  }
+  
+  .logo {
+    font-size: 1rem !important;
+  }
+  
+  /* Footer */
+  .rodape {
+    font-size: 0.75rem !important;
+    padding: 1rem !important;
+  }
+  
+  /* Badge */
+  .historico-badge {
+    font-size: 0.6rem !important;
+    padding: 0.15rem 0.5rem !important;
+  }
+  
+  /* Modal */
+  .modal {
+    padding: 1.25rem !important;
+    width: 95% !important;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.2rem !important;
+  }
+  
+  .modal-rodape {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+  
+  .btn-modal-cancelar,
+  .btn-modal-confirmar {
+    width: 100% !important;
+  }
+}
+
+/* Celular pequeno */
+@media (max-width: 480px) {
+  .saldo-valor {
+    font-size: 1.4rem !important;
+  }
+  
+  .cartao-numero {
+    font-size: 0.7rem !important;
+  }
+  
+  .btn-operacao {
+    padding: 0.6rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .transacao-desc {
+    font-size: 0.7rem !important;
+  }
+  
+  .transacao-data {
+    font-size: 0.55rem !important;
+  }
+  
+  .historico-titulo {
+    font-size: 0.75rem !important;
+  }
+  
+  .card-info-valor {
+    font-size: 0.9rem !important;
+  }
+  
+  .card-info-titulo {
+    font-size: 0.65rem !important;
+  }
+}

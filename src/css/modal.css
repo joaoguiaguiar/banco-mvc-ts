@@ -1,0 +1,134 @@
+/* MODAL - VERSÃO SIMPLES E FUNCIONAL */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: #1a1f2e;
+    border-radius: 24px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 450px;
+    border: 1px solid #2d3340;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.modal-fechar {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-corpo {
+    margin-bottom: 1.5rem;
+}
+
+.grupo-form {
+    margin-bottom: 1rem;
+}
+
+.grupo-form label {
+    display: block;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+}
+
+.grupo-form input {
+    width: 100%;
+    padding: 0.75rem;
+    background: #0f1219;
+    border: 1px solid #2d3340;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+}
+
+.modal-rodape {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.btn-modal-cancelar {
+    padding: 0.75rem 1.5rem;
+    background: #2d3340;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-modal-confirmar {
+    padding: 0.75rem 1.5rem;
+    background: #8b5cf6;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsividade do Modal */
+@media (max-width: 768px) {
+    .modal {
+        padding: 1.5rem;
+        width: 95%;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.25rem;
+    }
+    
+    .grupo-form input {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn-modal-cancelar,
+    .btn-modal-confirmar {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal {
+        padding: 1rem;
+    }
+    
+    .modal-rodape {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .btn-modal-cancelar,
+    .btn-modal-confirmar {
+        width: 100%;
+    }
+}

@@ -1,0 +1,95 @@
+.cartao {
+  background: var(--gradiente-cartao);
+  border-radius: var(--raio-cartao);
+  padding: var(--espaco-6);
+  border: 1px solid rgba(43, 110, 240, 0.25);
+  box-shadow: var(--sombra-lg);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transicao);
+}
+
+.cartao::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(
+    circle,
+    rgba(43, 110, 240, 0.25) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.cartao::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.1) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.cartao-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--espaco-6);
+  position: relative;
+}
+
+.cartao-chip {
+  width: 42px;
+  height: 32px;
+  background: var(--gradiente-chip);
+  border-radius: 8px;
+  box-shadow:
+    inset 0 1px 2px rgba(0, 0, 0, 0.2),
+    0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.cartao-bandeira {
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cartao-numero {
+  font-family: var(--fonte-mono);
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  text-align: center;
+  margin: var(--espaco-6) 0;
+  color: var(--texto-principal);
+  font-weight: 500;
+}
+
+.cartao-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cartao-campo-rotulo {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+}
+
+.cartao-campo-valor {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--texto-principal);
+}

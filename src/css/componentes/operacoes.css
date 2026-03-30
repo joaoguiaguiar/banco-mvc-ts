@@ -1,0 +1,53 @@
+.grade-operacoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.btn-operacao {
+  border: none;
+  border-radius: var(--raio-sm);
+  padding: 0.8rem 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: var(--transicao);
+  cursor: pointer;
+  font-family: var(--fonte-sans);
+}
+
+.btn-operacao.deposito {
+  background: var(--sucesso-fraco);
+  color: var(--sucesso);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.btn-operacao.saque {
+  background: var(--perigo-fraco);
+  color: var(--perigo);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+}
+
+.btn-operacao.transferencia {
+  grid-column: span 2;
+  background: var(--destaque-azul-fraco);
+  color: var(--destaque-azul);
+  border: 1px solid rgba(43, 110, 240, 0.3);
+}
+
+.btn-operacao:hover {
+  transform: translateY(-2px);
+}
+
+.btn-operacao:active {
+  transform: scale(0.97);
+}
+
+.btn-operacao:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}

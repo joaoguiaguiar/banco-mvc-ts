@@ -1,0 +1,205 @@
+/* Tablet e Mobile */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: var(--espaco-6);
+    padding: var(--espaco-4);
+  }
+  
+  .barra-lateral {
+    order: 1;
+  }
+  
+  .conteudo-principal {
+    order: 2;
+  }
+  
+  .cards-info {
+    grid-template-columns: 1fr;
+    gap: var(--espaco-4);
+  }
+  
+  .transacao {
+    grid-template-columns: 40px 1fr auto;
+    gap: var(--espaco-3);
+    padding: var(--espaco-3) var(--espaco-4);
+  }
+  
+  .transacao-icone {
+    width: 38px;
+    height: 38px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--espaco-3);
+  }
+  
+  .cartao {
+    padding: var(--espaco-4);
+  }
+  
+  .cartao-numero {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  
+  .saldo-valor {
+    font-size: 1.8rem;
+  }
+  
+  /* Botões em coluna no mobile */
+  .grade-operacoes {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .btn-operacao.transferencia {
+    grid-column: span 1;
+  }
+  
+  .btn-operacao {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Cards em coluna */
+  .cards-info {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .card-info {
+    padding: var(--espaco-3) var(--espaco-4);
+  }
+  
+  .card-info-valor {
+    font-size: 1rem;
+  }
+  
+  /* Transações no mobile */
+  .transacao {
+    grid-template-columns: 35px 1fr auto;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+  
+  .transacao-icone {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+  
+  .transacao-desc {
+    font-size: 0.75rem;
+  }
+  
+  .transacao-data {
+    font-size: 0.6rem;
+  }
+  
+  .transacao-valor {
+    font-size: 0.75rem;
+  }
+  
+  .historico-badge {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .painel {
+    padding: var(--espaco-3) var(--espaco-4);
+  }
+  
+  .saldo-detalhes {
+    gap: var(--espaco-3);
+  }
+  
+  .detalhe-valor {
+    font-size: 0.75rem;
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+  :root {
+    --espaco-5: 1rem;
+    --espaco-6: 1.25rem;
+  }
+  
+  .saldo-valor {
+    font-size: 1.5rem;
+  }
+  
+  .cartao-numero {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+  
+  .transacao-desc {
+    font-size: 0.7rem;
+  }
+  
+  .transacao-data {
+    font-size: 0.55rem;
+  }
+  
+  .btn-operacao {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+  }
+  
+  .historico-badge {
+    font-size: 0.6rem;
+  }
+  
+  .cabecalho-historico {
+    padding: var(--espaco-3) var(--espaco-4);
+  }
+  
+  .historico-titulo {
+    font-size: 0.8rem;
+  }
+  
+  .painel-rotulo {
+    font-size: 0.65rem;
+  }
+  
+  .grafico-mini {
+    height: 35px;
+    margin: var(--espaco-3) 0;
+  }
+  
+  .saldo-detalhes {
+    flex-direction: column;
+    gap: var(--espaco-2);
+  }
+  
+  .detalhe-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .detalhe-rotulo {
+    font-size: 0.55rem;
+  }
+  
+  .detalhe-valor {
+    font-size: 0.7rem;
+  }
+}
+
+/* Prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

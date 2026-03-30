@@ -1,0 +1,28 @@
+.cards-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--espaco-4);
+}
+
+.card-info {
+  background: var(--fundo-elevado);
+  border-radius: var(--raio-sm);
+  padding: var(--espaco-4) var(--espaco-5);
+  border: 1px solid var(--borda-suave);
+  transition: var(--transicao);
+}
+
+.card-info-titulo {
+  font-size: 0.7rem;
+  color: var(--texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--espaco-2);
+}
+
+.card-info-valor {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: var(--fonte-mono);
+  color: var(--destaque-azul);
+}

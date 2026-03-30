@@ -1,0 +1,7 @@
+.painel {
+  background: var(--fundo-superficie);
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--raio-painel);
+  padding: var(--espaco-5) var(--espaco-6);
+  transition: var(--transicao);
+}

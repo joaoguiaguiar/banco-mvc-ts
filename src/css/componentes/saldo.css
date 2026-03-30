@@ -1,0 +1,75 @@
+.painel-rotulo {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--texto-suave);
+  margin-bottom: var(--espaco-2);
+}
+
+.saldo-valor {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  font-family: var(--fonte-mono);
+  color: var(--sucesso);
+  transition: color 0.3s;
+}
+
+.grafico-mini {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 40px;
+  margin: var(--espaco-4) 0 var(--espaco-2);
+}
+
+.barra-grafico {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  transition: var(--transicao);
+}
+
+.barra-grafico.entrada {
+  background: var(--sucesso);
+}
+
+.barra-grafico.saida {
+  background: var(--perigo);
+}
+
+.saldo-detalhes {
+  display: flex;
+  gap: var(--espaco-4);
+  margin-top: var(--espaco-4);
+  padding-top: var(--espaco-3);
+  border-top: 1px solid var(--borda-suave);
+  flex-wrap: wrap;
+}
+
+.detalhe-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.detalhe-rotulo {
+  font-size: 0.6rem;
+  color: var(--texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detalhe-valor {
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--fonte-mono);
+}
+
+.detalhe-valor.entrada {
+  color: var(--sucesso);
+}
+
+.detalhe-valor.saida {
+  color: var(--perigo);
+}

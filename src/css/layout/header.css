@@ -1,0 +1,35 @@
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: rgba(10, 12, 18, 0.86);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--borda-suave);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--espaco-8);
+  height: 68px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.2px;
+  padding: 1rem;
+}
+
+.logo em {
+  color: var(--destaque-azul);
+  font-style: normal;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .cabecalho {
+    padding: 0 var(--espaco-4);
+  }
+}
